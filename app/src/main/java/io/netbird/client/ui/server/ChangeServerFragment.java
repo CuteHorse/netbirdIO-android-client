@@ -77,7 +77,7 @@ public class ChangeServerFragment extends Fragment {
 
             disableUIElements();
 
-            if (binding.setupKeyGroup.getVisibility() == View.VISIBLE) {
+            
                 String setupKey = binding.editTextSetupKey.getText().toString().trim();
                 if(setupKey.isEmpty()) {
                     binding.editTextSetupKey.setError(v.getContext().getString(R.string.change_server_error_invalid_setup_key));
@@ -93,11 +93,7 @@ public class ChangeServerFragment extends Fragment {
                 }
                 String serverAddress = binding.editTextServer.getText().toString().trim();
                 loginWithSetupKey(v.getContext(), serverAddress, setupKey);
-            } else {
-                // Setup key is empty; update server instead
-                String serverAddress = binding.editTextServer.getText().toString().trim();
-                updateServer(v.getContext(), serverAddress);
-            }
+        
         });
     }
 
