@@ -54,7 +54,7 @@ public class ChangeServerFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        binding.setupKeyGroup.setVisibility(View.VISIBLE);
         boolean hideAlert = false;
         if (getArguments() != null) {
             hideAlert = getArguments().getBoolean("hideAlert", false);
